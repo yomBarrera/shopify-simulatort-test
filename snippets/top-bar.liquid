@@ -1,0 +1,11 @@
+{% assign text = sett.settings.texto | upcase %}
+
+<div class="topbar animation_scroll_left">
+
+{% for i in (1..20) -%}
+  <div class="topbar__message">
+    <i class="topbar__icon"></i>
+    <p class="topbar__parraf" >{{ text }}</p>
+  </div>
+{%- endfor %}
+</div>

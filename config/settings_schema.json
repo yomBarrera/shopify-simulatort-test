@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Featured Products",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading Text"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color"
+      }
+    ]
+  },
+  {
+    "name": "top-bar",
+    "settings": [
+      {
+        "type": "text",
+        "id": "texto",
+        "label": "text top bar"
+      }
+    ]
+  }
+]

@@ -1,0 +1,26 @@
+@keyframes scroll-horizontal {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(-70%);
+  }
+}
+
+.animation_scroll_left {
+  width: max-content;
+  min-width: 100%;
+  overflow-x: hidden;
+  animation-name: scroll-horizontal;
+  animation-duration: 100s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-timing-function: linear;
+
+  // animation-fill-mode: forwards;
+  // animation-delay: 10s;
+  &:hover {
+    animation-play-state: paused;
+  }
+}

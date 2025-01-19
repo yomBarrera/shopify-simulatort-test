@@ -1,0 +1,194 @@
+@use './variables' as v;
+@use './mixin' as m;
+
+.topbar {
+  display: flex;
+  height: 32px;
+  background-color: v.$color_first;
+
+  &__message {
+    margin-right: 5px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__icon {
+    display: block;
+    width: 17px;
+    height: 17px;
+    background: url('/assets/star-purple.svg') center center / cover no-repeat;
+    margin-right: 5px;
+  }
+
+  &__parraf {
+    color: v.$color_text;
+    font-weight: bolder;
+    font-size: 12px;
+  }
+}
+
+.header {
+  overflow-x: hidden;
+  position: sticky;
+  top: 0;
+  transition: all 0.5s;
+  color: v.$color_text;
+
+  &.header-scrolled {
+    background-color: #00000024;
+    backdrop-filter: blur(16px);
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1440px;
+    padding: 16px 12px;
+    margin: auto;
+
+    @include m.desktop {
+      padding: 16px 40px;
+    }
+  }
+
+  &__mobile {
+    display: flex;
+    align-items: center;
+    height: 48px;
+
+    @include m.desktop {
+      display: none;
+    }
+
+    &--buton-menu {
+      display: block;
+      border: none;
+      width: 36px;
+      height: 20px;
+      background: url('/assets/but_menu.svg') center center /contain no-repeat;
+      margin: 0px 0px 4px 0px;
+    }
+
+    &--logo-mobile {
+      display: block;
+      width: 25px;
+      height: 35px;
+      background: url('/assets/logo-simple.svg') center center /cover no-repeat;
+      margin: 0px 9px 9px 17px;
+    }
+
+    &--text-mobile {
+      font-family: v.$font_secondary;
+      font-weight: 900;
+      font-size: 18px;
+      color: v.$color_text;
+      padding: 0 0 0 6px;
+      margin-bottom: 6px;
+      line-height: 18px;
+      border-left: 2px solid v.$color_first;
+    }
+  }
+
+  &__desktop {
+    display: none;
+
+    @include m.desktop {
+      display: flex;
+
+      &--logo-desktop {
+        display: block;
+        width: 283px;
+        height: 35px;
+        background: url('/assets/logo.svg') center /contain no-repeat;
+      }
+    }
+  }
+
+  &__aceptpay {
+    border: 1px solid v.$color_first;
+    border-radius: 20px;
+    padding: 8px 16px;
+    margin: 0 35px 0 0;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      border: 1px solid v.$color_second;
+    }
+
+    &--icons {
+      display: flex;
+      gap: 8px;
+      margin: 0 0 0 20px;
+    }
+
+    &--icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 26px;
+      height: 26px;
+
+      &.bitcoin {
+        background: url('/assets/btc-svgrepo-com.svg') center /contain no-repeat;
+      }
+
+      &.etherium {
+        background: url('/assets/eth-svgrepo-com.svg') center /contain no-repeat;
+      }
+
+      &.litecoin {
+        background: url('/assets/ltc-svgrepo-com.svg') center /contain no-repeat;
+      }
+
+      &.dogecoin {
+        background: url('/assets/doge-svgrepo-com.svg') center /contain no-repeat;
+      }
+
+      &.usdc {
+        background: url('/assets/usdc-svgrepo-com.svg') center /contain no-repeat;
+      }
+    }
+  }
+
+  &__actionlinks {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    a {
+      text-decoration: none;
+      color: v.$color_text;
+
+      &:first-of-type {
+        margin: 0 10px 0 0;
+      }
+    }
+  }
+
+
+  &__button-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background-color: v.$color_first;
+    border-radius: 5px;
+    border: none;
+
+    @include m.desktop {
+      width: 60px;
+    }
+
+    &--icon {
+      display: inline-flex;
+      background-color: v.$color_white;
+      mask: url('/assets/shopping-cart.svg') center /contain no-repeat;
+      width: 35px;
+      height: 35px;
+    }
+  }
+}
