@@ -14,14 +14,14 @@
       }
     ]
   },
-  {
-    "name": "top-bar",
-    "settings": [
-      {
-        "type": "text",
-        "id": "texto",
-        "label": "text top bar"
-      }
-    ]
-  }
+  // {
+  //   "name": "footer",
+  //   "settings": [
+  //     {
+  //       "type": "image_picker",
+  //       "id": "image",
+  //       "label": "imagen de logo"
+  //     }
+  //   ]
+  // }
 ]

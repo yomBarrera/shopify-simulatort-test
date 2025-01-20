@@ -69,7 +69,7 @@ body {
   width: 100vw;
   margin: 0;
   padding: 0;
-  height: 1200px;
+  // height: 1200px;
 }
 
 .mobile {
@@ -102,4 +102,61 @@ body {
   @include m.desktop {
     display: flex !important;
   }
+}
+
+.aceptpay {
+  border: 1px solid v.$color_first;
+  border-radius: 20px;
+  padding: 8px 16px;
+  margin: 0 35px 0 0;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    border: 1px solid v.$color_second;
+  }
+
+  &__icons {
+    display: flex;
+    gap: 8px;
+    margin: 0 0 0 20px;
+  }
+
+  &--icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 26px;
+    height: 26px;
+
+    &.bitcoin {
+      background: url('/assets/btc-svgrepo-com.svg') center /contain no-repeat;
+    }
+
+    &.etherium {
+      background: url('/assets/eth-svgrepo-com.svg') center /contain no-repeat;
+    }
+
+    &.litecoin {
+      background: url('/assets/ltc-svgrepo-com.svg') center /contain no-repeat;
+    }
+
+    &.dogecoin {
+      background: url('/assets/doge-svgrepo-com.svg') center /contain no-repeat;
+    }
+
+    &.usdc {
+      background: url('/assets/usdc-svgrepo-com.svg') center /contain no-repeat;
+    }
+  }
+}
+
+.icon-arrow-rigth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 2px;
+  background: url('/assets/arrow-right.svg') center /contain no-repeat;
 }

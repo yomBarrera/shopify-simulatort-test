@@ -1,0 +1,226 @@
+@use './variables' as v;
+@use './mixin' as m;
+
+.footer {
+  margin: auto;
+  max-width: 1440px;
+  padding: 16px 20px;
+  color: v.$color_text;
+
+  @include m.desktop {
+    padding: 0px 40px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include m.desktop {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 15px 0;
+    }
+
+  }
+
+  &__section-logo {
+    order: 2;
+    margin: 39px 0 0 0;
+
+    @include m.desktop {
+      margin: 18px 0 0 0;
+      order: 0;
+    }
+  }
+
+  &__logo {
+    width: min-content;
+    display: flex;
+    align-items: center;
+
+    &-content {
+      @include m.desktop {
+        width: min-content;
+      }
+    }
+  }
+
+  &__logo-icon {
+    display: block;
+    width: 80px;
+    height: 95px;
+    background: url('/assets/logo-simple.svg') center / contain no-repeat;
+    margin: 0 16px 0 0;
+
+    @include m.desktop {}
+
+  }
+
+  &__logo-text {
+    font-family: v.$font_secondary;
+    font-weight: 900;
+    font-size: 34px;
+    color: v.$color_text;
+    padding: 0 0 0 16px;
+    margin-bottom: 9px;
+    line-height: 18px;
+    border-left: 2px solid v.$color_first;
+  }
+
+  &__logo-parraf {
+    margin-top: 34px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  &__section-links {
+    margin: 30px 0 44px;
+
+    @include m.desktop {
+      margin: 22px 0 0px;
+
+    }
+  }
+
+  &__links {
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+
+      @include m.desktop {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+
+    li {
+      width: fit-content;
+    }
+
+    &-primary-list {
+      font-size: 24px;
+      gap: 36px;
+
+    }
+
+    &-secondary-list {
+      margin-top: 36px;
+      font-size: 12px;
+      gap: 16px;
+
+      @include m.desktop {
+        margin-top: 45px;
+        gap: 48px;
+      }
+    }
+
+    &-pay {
+      display: flex;
+      margin-top: 61px;
+      font-size: 12px;
+
+      @include m.desktop {
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  &__link {
+    width: fit-content;
+    color: v.$color_text;
+
+
+    &:hover {
+      opacity: 0.7;
+
+      span {
+        display: block;
+        height: 3px;
+        background: linear-gradient(to right, #3b0764 0%, #c084fc 50%, #f3e8ff 100%);
+        background-size: 100% 3px;
+        background-position: bottom;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  &__section-networks {
+    position: relative;
+
+    @include m.desktop {
+      margin-top: 33px;
+    }
+  }
+
+  &__input {
+
+    &--parraf {
+      @include m.desktop {
+        width: fit-content;
+      }
+
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    &--content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 40px;
+      margin: 14px 0 0 0;
+      padding: 0 16px;
+      background-color: #232128;
+      background-color: #fff;
+      border-radius: 5px;
+
+      @include m.desktop {
+        width: 215px;
+      }
+
+      .input {
+        border: none;
+        appearance: none;
+        background: transparent;
+        color: v.$color_text;
+        outline: none;
+        font-size: 16px;
+        width: 100%;
+      }
+
+      i {
+        min-width: 24px;
+        min-height: 24px;
+      }
+    }
+  }
+
+  &__networks {
+    position: absolute;
+    right: 0;
+    bottom: -118px;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    gap: 18px;
+
+    a {
+      color: v.$color_text;
+    }
+
+    @include m.desktop {
+      position: relative;
+      top: 0;
+      left: 0;
+      flex-direction: row;
+      margin-top: 60px;
+      gap: 8px;
+    }
+  }
+}

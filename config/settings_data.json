@@ -25,6 +25,7 @@
     "footer": {
       "type": "footer",
       "settings": {
+        "image": "logo-simple.png",
         "logo_text": "MyShopify",
         "links": [
           {

@@ -1,0 +1,198 @@
+{% assign logo = settings['footer'].settings.image | asset_url | image_tag: 'Buuu'  %}
+
+<footer class="footer">
+
+  <div class="footer__container">
+
+    <div class="footer__section-logo">
+      <div class="footer__logo-content">
+        <div class="footer__logo">
+          <i class="footer__logo-icon"></i>
+          <span class="footer__logo-text">STORE</span>
+        </div>
+        <p class="footer__logo-parraf">
+          © 2024, Shuffle.store Operated by
+          <span> Studio Plaid.</span> Need help?
+          <br><span >Email support@shuffle.store</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer__section-links">
+      <div class="footer__links">
+        <ul class="footer__links-primary-list">
+          {% for item in settings['footer'].settings.links limit: 4 %}
+            <li class="">
+              <a class="footer__link" href="{{item.url}}">
+                <p class="footer__link-parraf">
+                  {{item.label | upcase}}
+                </p>
+                <span class="footer__link-span"></span>
+              </a>
+            </li>
+
+          {% endfor %}
+        </ul>
+
+        <ul class="footer__links-secondary-list ">
+          {% for item in settings['footer'].settings.links offset: 4 %}
+            <li class="">
+              <a class="footer__link"href="{{item.url}}">
+                <p class="footer__link-parraf">
+                  {{item.label | upcase}}
+                </p>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+
+        <div class="footer__links-pay">
+            <p class="footer__links-pay--parraf">We accept all major cards, PayPal &amp; crypto</p>
+            <div class="aceptpay__icons">
+              <i class="aceptpay--icon bitcoin"></i>
+              <i class="aceptpay--icon etherium"></i>
+              <i class="aceptpay--icon litecoin" ></i>
+              <i class="aceptpay--icon dogecoin"></i>
+              <i class="aceptpay--icon usdc"></i>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__section-networks">
+
+        <div class="footer__input">
+          <p class="footer__input--parraf">Subscribe and receive drop notifications</p>
+          <div class="footer__input--content">
+            <input
+              class="input"
+              placeholder="Enter Email"
+            >
+            <i class="icon-arrow-rigth"></i>
+          </div>
+        </div>
+        <div class="footer__networks">
+          <div class="">
+            <a target="_blank" href="https://www.facebook.com">
+              <p class="">FACEBOOK</p>
+            </a>
+          </div>
+          <div style="">
+            <a target="_blank" href="https://twitter.com">
+              <p class="">X(TWITTER)</p>
+            </a>
+          </div>
+          <div style=";">
+            <a target="_blank" href="https://www.instagram.com">
+              <p class="">INSTAGRAM</p>
+            </a>
+          </div>
+        </div>
+
+    </div>
+  </div>
+  {% comment %} <div style="opacity: 1; transform: none;">
+    <div class="block sm:hidden">
+      <div class=" ">
+        <p class=" text-[12px]">Subscribe and receive drop notifications</p>
+        <div class=" mt-[14px] grid h-[40px] w-full grid-cols-[1fr_15px] items-center justify-center rounded-[5px] bg-grey px-4 xs:max-w-[286px]">
+          <input
+            class="order-transparent appearance-none bg-transparent focus:border-transparent focus:ring-0"
+            placeholder="Enter Email"
+          >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#762CFB"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-arrow-right "
+          >
+            <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="m-auto mt-[37px] flex w-full justify-between  l:hidden">
+    <div class=" w-full ">
+      <div class="flex w-full flex-col justify-between fold:flex-row">
+        <div style="opacity:0;transform:translateY(50px) translateZ(0)">
+          <div class="flex items-center gap-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="95" viewBox="0 0 95 80" fill="none">
+              <path fill="#6B38F1" d="M60.417 0H19.576C14.348 0 9.426 2.105 5.732 5.909 2.038 9.719 0 14.779 0 20.16v6.175c0 8.224 5.023 15.43 13.441 19.283l3.36 1.418v-20.4a2.355 2.355 0 0 1-.02-.308v-6.175c0-1.046.518-1.727.825-2.042.307-.316.968-.85 1.976-.85h40.842a2.72 2.72 0 0 1 1.983.85c.308.315.818.996.818 2.035v13.55H80V20.154c0-5.383-2.038-10.45-5.732-14.252C70.56 2.098 65.645 0 60.418 0ZM66.49 49.345 63.2 47.956v20.54c.013.049.013.105.013.154v6.175a2.895 2.895 0 0 1-.825 2.05c-.306.315-.968.849-1.977.849H19.576c-1.54 0-2.795-1.299-2.795-2.877V61.296H0v13.55C0 85.963 8.78 95 19.576 95h40.841c5.228-.007 10.15-2.105 13.844-5.909 3.694-3.81 5.732-8.876 5.732-14.259v-6.175c0-8.301-5.044-15.522-13.503-19.304v-.008Z"></path><path fill="#6B38F1" d="M39.996 68.6s-1.35-7.641-7.21-13.676v.007a26.622 26.622 0 0 0-2.366-2.14C25.097 48.552 19.487 47.5 19.487 47.5s7.423-1.39 13.291-7.425a25.873 25.873 0 0 0 2.972-3.698c3.374-5.073 4.24-9.992 4.24-9.992s1.356 7.649 7.218 13.683c.77.793 1.567 1.495 2.365 2.134 5.323 4.238 10.926 5.29 10.926 5.29s-7.423 1.397-13.285 7.432a25.842 25.842 0 0 0-2.965 3.698c-3.373 5.06-4.253 9.979-4.253 9.979Z"></path>
+            </svg>
+            <p class="text-center text-purple">|</p>
+            <p class="font-secondary text-[34px] font-bold">STORE</p>
+          </div>
+        </div>
+        <div class="mt-[20px] grid justify-between fold:mt-0 sm:hidden sm:grid-cols-3">
+          <div style="opacity:0;transform:translateY(50px) translateZ(0)">
+            <a target="_fb" href="https://www.facebook.com/shufflefb">
+              <p class="text-[12px] font-medium hover:opacity-70">FACEBOOK</p>
+            </a>
+          </div>
+          <div style="opacity:0;transform:translateY(50px) translateZ(0)">
+            <a target="_twitter" href="https://twitter.com/shufflecom">
+              <p class="text-[12px] font-medium hover:opacity-70">X(TWITTER)</p>
+            </a>
+          </div>
+          <div style="opacity:0;transform:translateY(50px) translateZ(0)">
+            <a target="_ig" href="https://www.instagram.com/shuffle?igsh=YzAwZjE1ZTI0Zg==">
+              <p class="text-[12px] font-medium hover:opacity-70">INSTAGRAM</p>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div style="opacity:0;transform:translateY(50px) translateZ(0)">
+        <p class="mt-[35px]  text-[12px]">
+          © 2024, Shuffle.store Operated by Studio Plaid. Need help?<br>
+          <a href="mailto:support@shuffle.store">Email support@shuffle.store</a>
+        </p>
+      </div>
+    </div>
+    <div class="hidden sm:block">
+      <div>
+        <p class=" text-[12px]">Subscribe and receive drop notifications</p>
+        <div class="mt-[14px] grid h-[40px] w-full max-w-[286px] grid-cols-[1fr_15px] items-center justify-center rounded-[5px] bg-grey px-4">
+          <input
+            class="order-transparent appearance-none bg-transparent focus:border-transparent focus:ring-0"
+            placeholder="Enter Email"
+          >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#762CFB"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-arrow-right "
+          >
+            <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </div>
+      </div>
+      <div class="mt-[40px] grid grid-cols-3 l:mt-[56px]">
+        <div style="opacity:0;transform:translateY(50px) translateZ(0)">
+          <a target="_fb" href="#"><p class="text-[12px] font-medium hover:opacity-70">FACEBOOK</p></a>
+        </div>
+        <div style="opacity:0;transform:translateY(50px) translateZ(0)">
+          <a target="_twitter" href="https://twitter.com/shufflecom">
+            <p class="text-[12px] font-medium hover:opacity-70">X(TWITTER)</p>
+          </a>
+        </div>
+        <div style="opacity:0;transform:translateY(50px) translateZ(0)">
+          <a target="_ig" href="https://www.instagram.com/shuffle?igsh=YzAwZjE1ZTI0Zg==">
+            <p class="text-[12px] font-medium hover:opacity-70">INSTAGRAM</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div> {% endcomment %}
+</footer>

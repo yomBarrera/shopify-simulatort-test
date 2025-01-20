@@ -3,6 +3,7 @@
   <p>Price: ${{ product.price }}</p>
   {% if product.tags %}
     <ul>
+      <img src={{ product.image |  asset_url }} alt="image" height="200" width="200">
       {% for tag in product.tags %}
         <li>{{ tag }}</li>
       {% endfor %}
