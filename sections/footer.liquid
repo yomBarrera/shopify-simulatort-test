@@ -1,4 +1,5 @@
-{% assign logo = settings['footer'].settings.image | asset_url | image_tag: 'Buuu'  %}
+{% assign logo = settings['footer'].settings.image |  image_url: 80: %}
+{% assign alt = settings['footer'].settings.logo_text  %}
 
 <footer class="footer">
 
@@ -7,7 +8,8 @@
     <div class="footer__section-logo">
       <div class="footer__logo-content">
         <div class="footer__logo">
-          <i class="footer__logo-icon"></i>
+          <img src="{{logo}}" width="80" alt="{{alt}}">
+          {% comment %} <i class="footer__logo-icon"></i> {% endcomment %}
           <span class="footer__logo-text">STORE</span>
         </div>
         <p class="footer__logo-parraf">

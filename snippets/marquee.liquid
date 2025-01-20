@@ -1,0 +1,8 @@
+<div class="marquee animation_scroll_left">
+  {% for i in (1..20) -%}
+    <div class="marquee__message">
+      <i class="marquee__icon"></i>
+      <p class="marquee__parraf" >{{ text | upcase }}</p>
+    </div>
+  {%- endfor %}
+</div>

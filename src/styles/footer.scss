@@ -160,12 +160,12 @@
   &__input {
 
     &--parraf {
+      font-size: 12px;
+      margin-top: 5px;
+
       @include m.desktop {
         width: fit-content;
       }
-
-      font-size: 12px;
-      margin-top: 5px;
     }
 
     &--content {
@@ -177,7 +177,6 @@
       margin: 14px 0 0 0;
       padding: 0 16px;
       background-color: #232128;
-      background-color: #fff;
       border-radius: 5px;
 
       @include m.desktop {

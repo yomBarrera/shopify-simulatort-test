@@ -157,6 +157,53 @@ body {
   justify-content: center;
   align-items: center;
   width: 24px;
-  height: 2px;
+  height: 24px;
   background: url('/assets/arrow-right.svg') center /contain no-repeat;
+}
+
+.marquee {
+  display: flex;
+  background-color: v.$color_background;
+  padding: 10px 0;
+
+  &__message {
+    margin-right: 32px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__icon {
+    display: block;
+    width: 76px;
+    height: 76px;
+    background: url('/assets/star-purple.svg') center center / cover no-repeat;
+    margin-right: 32px;
+  }
+
+  &__parraf {
+    font-family: v.$font_secondary;
+    color: v.$color_text;
+    font-size: 85px;
+    font-weight: 900;
+  }
+
+  &.animation_scroll_left {
+    animation-duration: 180s;
+  }
+}
+
+.button-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-width: 200px;
+  min-height: 30px;
+  padding: 18px 40px;
+  font-family: v.$font_secondary;
+  font-weight: 700;
+  font-size: 32px;
+  border-radius: 5px;
+  background-color: v.$color_first;
+  color: v.$color_text;
 }

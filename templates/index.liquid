@@ -9,6 +9,7 @@
 <body>
   {% render 'header' with settings['top-bar'] as sett %}
   <main class="main">
+    {% render 'banner', banner-setting: settings['hero-banner'].settings %}
     {% comment %} {% include  'featured-products' %} {% endcomment %}
   </main>
   {% include 'footer' %}

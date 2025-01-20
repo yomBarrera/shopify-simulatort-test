@@ -1,0 +1,8 @@
+<section class="banner">
+  <div class="image-banner" style="background: url('{{ banner-setting.background_image }}') center/cover no-repeat ">
+    {% render 'button-primary', text: banner-setting.button_text, link: banner-setting.button_link %}
+  </div>
+  <div class="marquee_container">
+    {% render 'marquee' text: banner-setting.marquee_text %}
+  </div>
+</section>

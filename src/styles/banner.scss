@@ -1,0 +1,40 @@
+@use './variables' as v;
+@use './mixin' as m;
+
+.banner {
+  margin: auto;
+
+  .image-banner {
+    position: relative;
+    max-width: 1360px;
+    width: 90%;
+    height: 532px;
+    margin: 12px auto;
+    border-radius: 5px;
+
+    @include m.desktop {
+      width: 100%;
+      margin: 24px auto;
+      height: 600px;
+    }
+
+    .button-primary {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      @include m.desktop {
+        bottom: 32px;
+        left: 32px;
+        transform: translateX(0%);
+
+      }
+    }
+  }
+
+  .marquee_container {
+    width: 100%;
+    overflow-x: hidden;
+  }
+}
