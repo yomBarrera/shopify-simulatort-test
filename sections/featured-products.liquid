@@ -1,12 +1,17 @@
 
 <section class="featured-products" id="Allproducts">
-  {% comment %} <h2>{{ settings['featured-products'].settings.heading }}</h2> {% endcomment %}
+
+  {% comment %} contenedor de al grilla de las cards de productos {% endcomment %}
   <div class="product-list see">
+    {% comment %} asignacion de los productos en orden reverso  {% endcomment %}
     {% assign products = products | reverse %}
     {% for product in products %}
       {% render 'product-card', product: product %}
     {% endfor %}
+
   </div>
+
   <button class="button-primary desktop" id="viewall" >view all</button>
 
 </section>
+

@@ -2,25 +2,30 @@
 {% assign title_collections = settings['collections'].settings.title_text%}
 
 <section class="collections" id="collections" >
+
   <div class="collections__title">
     <i class="marquee__icon left"></i>
-    <h2>
-      {{title_collections | upcase }}
-    </h2>
+    <h2>{{title_collections | upcase }}</h2>
     <i class="marquee__icon right"></i>
   </div>
+
   <div class="collections__list">
 
     {% for collection in lastest_collection %}
+
+      {% comment %} variable que indica el año de creacion de la colección {% endcomment %}
       {% assign year_created = collection.created_at | split:'-'  %}
+
+      {% comment %} condicional que define las colecciones de1 año 2025 {% endcomment %}
       {% if year_created[0] >= 2025 %}
         <div class="collections__card">
           <picture>
             <img src="{{collection.image}}" alt="{{collection.title}}">
           </picture>
           <h3> {{collection.title }}</h3> 
-        </div>      
+        </div>
       {% endif %}
+
     {% endfor %}
 
   </div>
