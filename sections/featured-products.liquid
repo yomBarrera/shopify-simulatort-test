@@ -1,8 +1,12 @@
-<section class="featured-products">
-  <h2>{{ settings['featured-products'].settings.heading }}</h2>
-  <div class="product-list">
+
+<section class="featured-products" id="Allproducts">
+  {% comment %} <h2>{{ settings['featured-products'].settings.heading }}</h2> {% endcomment %}
+  <div class="product-list see">
+    {% assign products = products | reverse %}
     {% for product in products %}
       {% render 'product-card', product: product %}
     {% endfor %}
   </div>
+  <button class="button-primary desktop" id="viewall" >view all</button>
+
 </section>

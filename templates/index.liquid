@@ -6,11 +6,12 @@
   <link href="/styles/styles.css">
   <title>Shopify Simulator | Gradiweb</title>
 </head>
-<body>
+<body class="body">
   {% render 'header' with settings['top-bar'] as sett %}
   <main class="main">
     {% render 'banner', banner-setting: settings['hero-banner'].settings %}
-    {% comment %} {% include  'featured-products' %} {% endcomment %}
+    {% include  'featured-products' %}
+    {% include  'collections' %}
   </main>
   {% include 'footer' %}
   <script defer src="/main.js"></script>

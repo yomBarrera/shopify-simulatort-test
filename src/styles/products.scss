@@ -1,0 +1,111 @@
+@use './variables' as v;
+@use './mixin' as m;
+
+.featured-products {
+  max-width: 1440px;
+  margin: 20px auto 0;
+  padding: 0 0 0 10px;
+
+  @include m.desktop {
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .product-list {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding: 0 0 24px 0;
+
+    @include m.desktop {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-rows: 1fr;
+      height: auto;
+      transition: height 0.5s;
+
+      &.see {
+        height: 505px;
+        overflow: hidden;
+      }
+    }
+  }
+
+  .button-primary {
+    min-width: 137px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+  }
+}
+
+.product-card {
+  min-width: 228px;
+  color: v.$color_text;
+  transition: scale 1.5s;
+  opacity: 0;
+
+  @include m.desktop {
+    max-width: 328px;
+  }
+
+  &__image-container {
+    width: 100%;
+    height: 275px;
+    border-radius: 5px;
+    border: v.$color_first 4px solid;
+    overflow: hidden;
+
+    @include m.desktop {
+      height: 416px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.5s linear;
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+
+    @include m.desktop {
+      font-size: 16px;
+    }
+  }
+
+  &__info {
+    margin-top: 16px;
+
+    h3 {
+      font-weight: normal;
+    }
+
+    &--tags {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: v.$color_second;
+    }
+  }
+
+  .button-cart {
+    display: none;
+
+    @include m.desktop {
+      display: flex;
+    }
+  }
+}
