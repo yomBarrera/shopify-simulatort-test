@@ -19,12 +19,14 @@
     }
 
     .button-primary {
+      display: none;
       position: absolute;
       bottom: 32px;
       left: 50%;
       transform: translateX(-50%);
 
       @include m.desktop {
+        display: flex;
         bottom: 32px;
         left: 32px;
         transform: translateX(0%);

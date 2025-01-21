@@ -1,0 +1,28 @@
+{% assign lastest_collection = settings['collections'].settings.colections %}
+{% assign title_collections = settings['collections'].settings.title_text%}
+
+<section class="collections" id="collections" >
+  <div class="collections__title">
+    <i class="marquee__icon left"></i>
+    <h2>
+      {{title_collections | upcase }}
+    </h2>
+    <i class="marquee__icon right"></i>
+  </div>
+  <div class="collections__list">
+
+    {% for collection in lastest_collection %}
+      {% assign year_created = collection.created_at | split:'-'  %}
+      {% if year_created[0] >= 2025 %}
+        <div class="collections__card">
+          <picture>
+            <img src="{{collection.image}}" alt="{{collection.title}}">
+          </picture>
+          <h3> {{collection.title }}</h3> 
+        </div>      
+      {% endif %}
+    {% endfor %}
+
+  </div>
+
+</section>

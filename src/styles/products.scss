@@ -3,7 +3,7 @@
 
 .featured-products {
   max-width: 1440px;
-  margin: 20px auto 0;
+  margin: 30px auto 0;
   padding: 0 0 0 10px;
 
   @include m.desktop {
@@ -22,6 +22,7 @@
       grid-template-columns: repeat(4, minmax(0, 1fr));
       grid-template-rows: 1fr;
       height: auto;
+      margin: 20px 0 0 0;
       transition: height 0.5s;
 
       &.see {
@@ -33,8 +34,10 @@
 
   .button-primary {
     min-width: 137px;
-    padding: 10px 20px;
+    padding: 17px 20px;
     text-transform: uppercase;
+    margin: 30px auto 0;
+    border: none;
   }
 }
 

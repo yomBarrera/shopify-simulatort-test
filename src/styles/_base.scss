@@ -173,7 +173,12 @@ body {
 .marquee {
   display: flex;
   background-color: v.$color_background;
-  padding: 10px 0;
+  padding: 20px 0;
+
+  @include m.desktop {
+    padding: 10px 0;
+
+  }
 
   &__message {
     margin-right: 32px;
@@ -192,8 +197,13 @@ body {
   &__parraf {
     font-family: v.$font_secondary;
     color: v.$color_text;
-    font-size: 85px;
+    font-size: 55px;
     font-weight: 900;
+
+    @include m.desktop {
+
+      font-size: 85px;
+    }
   }
 
   &.animation_scroll_left {

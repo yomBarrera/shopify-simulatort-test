@@ -1,3 +1,128 @@
+@use './variables' as v;
+@use './mixin' as m;
+
 .collections {
   max-width: 1440px;
+  margin: 77px auto 0px;
+
+  img {
+    width: 100%;
+  }
+
+  @include m.desktop {
+    margin: 97px auto 20px;
+  }
+
+  &__title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-family: v.$font_secondary;
+    color: v.$color_text;
+    margin-bottom: 50px;
+
+    h2 {
+      text-align: center;
+      font-size: 60px;
+      line-height: 72px;
+      letter-spacing: 0px;
+    }
+
+    .marquee__icon {
+      width: 56px;
+      height: 56px;
+      margin: 0;
+
+      &.left {
+        position: absolute;
+        top: 15px;
+        left: 20px;
+      }
+
+      &.right {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+      }
+    }
+
+    @include m.desktop {
+      margin-bottom: 61px;
+
+      h2 {
+        font-size: 82px;
+        line-height: 72px;
+        letter-spacing: 3px;
+      }
+
+      .marquee__icon {
+        margin: 15px 0 0;
+
+        &.left,
+
+        &.right {
+          position: static;
+        }
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 20px;
+
+    @include m.desktop {
+      padding: 0 40px;
+      flex-direction: row;
+    }
+  }
+
+  &__card {
+    position: relative;
+    flex: 1 1 50%;
+    min-height: 400px;
+    border-radius: 5pz;
+
+    @include m.desktop {
+      height: 400px;
+    }
+
+    picture {
+      display: block;
+      height: 100%;
+      overflow: hidden;
+
+      img {
+        object-fit: cover;
+        height: 400px;
+        transition: all 0.5s;
+      }
+
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    h3 {
+      position: absolute;
+      bottom: 44px;
+      left: 30px;
+      font-size: 24px;
+      color: v.$color_text;
+      font-weight: normal;
+
+      @include m.desktop {
+        font-size: 32px;
+
+      }
+    }
+  }
 }
